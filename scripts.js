@@ -2,55 +2,6 @@ const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
 const currencySelectToConverted = document.querySelector(".currency-select-to-convert")
 
-function toConvertValues () {
-    const inputCurrencyValue = document.querySelector(".input-currency").value
-    const currencyValueToConvert = document.querySelector(".currency-value-to-convert") // valor em real
-    const currencyValueConverted = document.querySelector(".currency-value") // outras moedas
-    const currencySelectToConverted = document.querySelector(".currency-select-to-convert")
-
-    const dolarToday = 5.2
-    const euroToday = 6.2
-    const libraToday = 6.16
-    const bitcoinToday = 149.148
-
-    if (currencySelectToConverted.value == "real1") {
-        currencyValueConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL"
-        })
-    }
-    if (currencySelectToConverted.value == "dolar1") {
-        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD"
-        }).format(inputCurrencyValue / dolarToday)
-    }
-    if (currencySelectToConverted.value == "euro1") {
-        currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR"
-        }).format(inputCurrencyValue / euroToday)
-    }
-    if (currencySelectToConverted.value == "libra1") {
-        currencyValueConverted.innerHTML = new Intl.NumberFormat("ld-LD", {
-            style: "currency",
-            currency: "LRD"
-        }).format(inputCurrencyValue / libraToday)
-    }
-    if(currencySelectToConverted.value == "bitcoin1") {
-        currencyValueConverted.innerHTML = new Intl.NumberFormat("bt-BT", {
-            style: "currency",
-            currency: "BT"
-        }).format(inputCurrencyValue / bitcoinToday)
-    }
-    
-
-
-    currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    }).format(inputCurrencyValue)
-
 
     function changeCurrency1() {
         const currencyNameToChange = document.getElementById("currency-name-to-change")
@@ -154,10 +105,7 @@ function changeCurrency() {
         currencyName.innerHTML = "Bitcoin"
         currencyImage.src = "./assets/bitcoin 1.png"
     }
-    if(currencySelect.value == "real") {
-        currencyName.innerHTML = "Real"
-        currencyImage.src = "./assets/brasil 2.png"
-    }
+   
 
 
     convertValues()
